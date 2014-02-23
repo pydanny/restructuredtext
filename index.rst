@@ -1,0 +1,22 @@
+.. The RestructuredText Book documentation master file, created by
+   sphinx-quickstart on Sun Feb 23 11:06:14 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to The RestructuredText Book's documentation!
+=====================================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

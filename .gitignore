@@ -1,5 +1,5 @@
 *.py[co]
 
 # Sphinx
-docs/_build
-docs/_static
+_build
+_static
