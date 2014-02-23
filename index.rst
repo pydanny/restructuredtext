@@ -6,11 +6,23 @@
 Welcome to The RestructuredText Book's documentation!
 =====================================================
 
-Contents:
+RestructuredText:
 
 .. toctree::
    :maxdepth: 2
 
+   rst_tutorial
+   rst_guide
+   rst_customizations
+   
+Sphinx:
+
+.. toctree::
+  :maxdepth: 2
+
+  sphinx_tutorial
+  sphinx_guide
+  sphinx_customizations
 
 
 Indices and tables
