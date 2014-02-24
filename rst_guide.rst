@@ -23,3 +23,20 @@ Improving upon the pattern established at http://markdown-guide.readthedocs.org/
 * Lists: Nested
 * Paragraphs
 * Images: Reference
+
+Blockquotes
+============
+
+To enclose a segment of text in blockquotes, one must add a tab at the start of a paragraph. 
+
+RestructuredText::
+
+    This is normal text.
+    
+        This is blockquoted text
+        
+        This is another paragraph of blockquoted text.
+        
+            This is a nested block of text.
+            
+Output:
