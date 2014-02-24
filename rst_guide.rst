@@ -5,9 +5,8 @@ RestructuredText Guide
 Basics
 ======
 
-Improving upon the pattern established at http://markdown-guide.readthedocs.org/en/latest/basics.html, these are things to add:
+Improving upon the pattern established at http://markdown-guide.readthedocs.org/en/latest/basics.html, sections to add:
 
-* Blockquotes
 * Code: Block
 * Code: Inline
 * Emphasis: Italics
@@ -29,7 +28,9 @@ Blockquotes
 
 To enclose a segment of text in blockquotes, one must add a tab at the start of a paragraph. 
 
-RestructuredText::
+RestructuredText:
+
+.. code-block:: RestructuredText
 
     This is normal text.
     
@@ -40,3 +41,14 @@ RestructuredText::
             This is a nested block of text.
             
 Output:
+
+.. code-block:: html
+
+    <p>This is normal text.</p>
+    <blockquote>
+    <div><p>This is blockquoted text</p>
+    <p>This is another paragraph of blockquoted text.</p>
+    <blockquote>
+    <div>This is a nested block of text.</div></blockquote>
+    </div></blockquote>
+    </div>
