@@ -6,6 +6,16 @@
 Welcome to The RestructuredText Book's documentation!
 =====================================================
 
+RestructuredText (reST) is a markup language, it's name coming from that it's considered a revision and reinterpretation of two other markup languages, **Setext** and **StructuredText**.
+
+Source: https://en.wikipedia.org/wiki/Restructured_Text
+
+This is a syntax guide designed to provide very clear, understandable examples and tutorials of RestructuredText usage. It borrows from several sources including:
+
+* https://en.wikipedia.org/wiki/Restructured_Text
+* http://docutils.sourceforge.net/docs/index.html
+* http://sphinx-doc.org/rest.html
+
 RestructuredText:
 
 .. toctree::

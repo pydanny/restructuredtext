@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'The RestructuredText Book'
-copyright = u'2014, Daniel Greenfeld'
+copyright = u'2014, Daniel Greenfeld, Eric Holscher'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -187,7 +187,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'TheRestructuredTextBook.tex', u'The RestructuredText Book Documentation',
-   u'Daniel Greenfeld', 'manual'),
+   u'Daniel Greenfeld, Eric Holscher', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -217,7 +217,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'therestructuredtextbook', u'The RestructuredText Book Documentation',
-     [u'Daniel Greenfeld'], 1)
+     [u'Daniel Greenfeld, Eric Holscher'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -231,7 +231,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'TheRestructuredTextBook', u'The RestructuredText Book Documentation',
-   u'Daniel Greenfeld', 'TheRestructuredTextBook', 'One line description of project.',
+   u'Daniel Greenfeld, Eric Holscher', 'TheRestructuredTextBook', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -252,9 +252,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'The RestructuredText Book'
-epub_author = u'Daniel Greenfeld'
-epub_publisher = u'Daniel Greenfeld'
-epub_copyright = u'2014, Daniel Greenfeld'
+epub_author = u'Daniel Greenfeld, Eric Holscher'
+epub_publisher = u'Daniel Greenfeld, Eric Holscher'
+epub_copyright = u'2014, Daniel Greenfeld, Eric Holscher'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
