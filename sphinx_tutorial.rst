@@ -105,7 +105,7 @@ You can now open them in your browser by typing::
 This should display a rendered HTML page that says **Welcome to Crawler’s documentation!
 ** at the top.
 
-``make html`` is the main way you will build documentation locally.
+``make html`` is the main way you will build HTML documentation locally.
 It is simply a wrapper around a more complex call to Sphinx.
 
 Documenting a Project
@@ -120,11 +120,49 @@ For this project,
 we'll have the following pages:
 
 * Index Page
+* Support
 * Installation
-* Cookbook
+* Cookbook/Examples
 * Command Line Options
 
-Let's start with the Installation Instructions.
+Let's start with the Support page.
+
+Support docs
+------------
+
+It's always important that users can ask questions when they get stuck.
+There are many ways to handle this,
+but normal approaches are to have an IRC channel and mailing list.
+Go ahead and put this markup in a ``support.rst`` file::
+
+	=======
+	Support
+	=======
+
+	The easiest way to get help with the project is to join the ``#crawler``
+	channel on Freenode_. We hang out there and you can get real-time help with
+	your projects.  The other good way is to open an issue on Github_.
+
+	The mailing list at https://groups.google.com/forum/#!forum/crawler is also available for support.
+
+	.. _Freenode: irc://freenode.net
+	.. _Github: http://github.com/example/crawler/issues
+
+.. index::
+	pair: Syntax; Hyperlink
+
+Hyperlink Syntax
+~~~~~~~~~~~~~~~~
+
+The main new markup here is the link syntax.
+The link text is set by putting a ``_`` after some text.
+The ````` is used to group text,
+allowing you to include multiple words in your link text.
+You should use the `````,
+even when the link text is only one word.
+This keeps the syntax consistent.
+
+The link target is defined at the bottom of the section with ``.. _<link text>: <target>``.
 
 Installation docs
 -----------------
@@ -145,9 +183,84 @@ Our RST file will look pretty simple for now::
 
 	    easy_install crawler
 
-	Or, if you have virtualenvwrapper installed::
+	Or, if you have virtualenvwrapper installed:
+
+	.. code-block:: bash
 
 	    mkvirtualenv crawler
 	    pip install crawler
 
+
+.. index::
+	pair: Syntax; Code Example
+
+Code Example Syntax
+~~~~~~~~~~~~~~~~~~~
+
 This snippet introduces a couple of simple concepts.
+The syntax for displaying code is ``::``.
+When it is used at the end of a sentence,
+Sphinx is smart and displays one ``:`` in the output,
+and knows there is a code example in the following indented block.
+
+Sphinx,
+like Python,
+uses meaningful whitespace.
+Blocks of content are structured based on the indention level they are on.
+You can see this concept with our ``code-block`` directive above.
+
+.. index::
+	pair: Syntax; TOC Tree
+
+Table of Contents Tree (toctree)
+--------------------------------
+
+Now would be a good time to introduce the ``toctree``.
+One of the main concepts in Sphinx is that it allows multiple pages to be combined into a cohesive hierarchy.
+The ``toctree`` directive is a fundamental part of this structure.
+A simple ``toctree`` directive looks like this::
+
+	.. toctree::
+	   :maxdepth: 2
+
+	   install
+	   support
+	   cookbook
+	   cli
+
+This will then output a Table of Contents in the page where this occurs.
+It will output the top-level headers of the pages as listed.
+This also tells Sphinx that the other pages are sub-pages of the current page.
+
+Other formats
+*************
+
+Create a single page document
+-----------------------------
+
+Some people prefer one large HTML document,
+instead of having to look through multiple pages.
+This is another area where Sphinx shines.
+You can write your documentation in multiple files to make editing and updating easier.
+Then if you want to distribute a single page HTML version::
+
+	make singlehtml
+
+This will combine all of your HTML pages into a single page.
+Check it out by opening it in your browser::
+
+    open _build/singlehtml/index.html
+
+Make a manpage
+---------------
+
+The beauty of Sphinx is that it can output in multiple formats,
+not just HTML.
+So you can generate a manpage for your docs::
+
+	make man
+
+This will place a manpage in ``_build/man``.
+You can then view it with::
+
+	man _build/man/crawler.1
