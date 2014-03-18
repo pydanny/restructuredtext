@@ -307,7 +307,9 @@ epub_copyright = u'2014, Daniel Greenfeld, Eric Holscher'
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {
+	'http://python.readthedocs.org/en/latest/': None
+}
 
 rst_epilog = """
 .. _Sphinx: http://sphinx-doc.org/
