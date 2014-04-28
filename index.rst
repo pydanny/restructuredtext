@@ -33,7 +33,15 @@ Sphinx:
   sphinx_tutorial
   sphinx_guide
   sphinx_customizations
+  
+Utilities:
 
+.. toctree::
+  :maxdepth: 2
+
+  tox
+
+  
 
 Indices and tables
 ==================
