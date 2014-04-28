@@ -1,5 +1,5 @@
 ============================================
-Using Tox with RestructuredText and Sphinx
+Testing your Documentation
 ============================================
 
 If you want to confirm that your docs build successfully, you add this to your tox.ini file:
@@ -26,3 +26,5 @@ If you want to confirm that your docs build successfully, you add this to your t
         rst2html.py --exit-status=2 CONTRIBUTING.rst /tmp/CONTRIBUTING.html
         
 TODO: Explain in depth what this actually does.
+
+TODO: Explain what tox is.
