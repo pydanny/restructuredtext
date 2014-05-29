@@ -2,6 +2,9 @@
 Sphinx Tutorial
 ===============
 
+Step 1
+======
+
 Getting Set Up
 **************
 
@@ -102,8 +105,7 @@ You can now open them in your browser by typing::
 
     open _build/html/index.html
 
-This should display a rendered HTML page that says **Welcome to Crawler’s documentation!
-** at the top.
+This should display a rendered HTML page that says **Welcome to Crawler’s documentation!** at the top.
 
 ``make html`` is the main way you will build HTML documentation locally.
 It is simply a wrapper around a more complex call to Sphinx.
@@ -124,6 +126,7 @@ we'll have the following pages:
 * Installation
 * Cookbook/Examples
 * Command Line Options
+* Changelog
 
 Let's start with the Support page.
 
@@ -133,7 +136,8 @@ Support docs
 It's always important that users can ask questions when they get stuck.
 There are many ways to handle this,
 but normal approaches are to have an IRC channel and mailing list.
-Go ahead and put this markup in a ``support.rst`` file::
+
+Go ahead and put this markup in your ``support.rst``::
 
 	=======
 	Support
@@ -173,7 +177,7 @@ For our example,
 we are installing a basic Python script,
 so it will be pretty easy.
 
-Our RST file will look pretty simple for now::
+Include the following in your ``install.rst``::
 
 	============
 	Installation
@@ -225,15 +229,42 @@ A simple ``toctree`` directive looks like this::
 
 	   install
 	   support
-	   cookbook
-	   cli
 
 This will then output a Table of Contents in the page where this occurs.
 It will output the top-level headers of the pages as listed.
 This also tells Sphinx that the other pages are sub-pages of the current page.
 
-Other formats
-*************
+You should go ahead and include the above ``toctree`` directive in your ``index.rst`` file.
+
+Build Docs Again
+----------------
+
+Now that you have a few pages of content,
+go ahead and build your docs again::
+
+	make html
+
+If you open up your ``index.html``,
+you should see the basic structure of your docs from the included ``toctree`` directive.
+
+Aside: Other formats
+********************
+
+Make a manpage
+---------------
+
+The beauty of Sphinx is that it can output in multiple formats,
+not just HTML.
+All of those formats share the same base format though,
+so you only have to change things in one place.
+So you can generate a manpage for your docs::
+
+	make man
+
+This will place a manpage in ``_build/man``.
+You can then view it with::
+
+	man _build/man/crawler.1
 
 Create a single page document
 -----------------------------
@@ -251,16 +282,64 @@ Check it out by opening it in your browser::
 
     open _build/singlehtml/index.html
 
-Make a manpage
----------------
+You'll notice that it included the documents in the order that your :index:`TOC Tree` was defined.
 
-The beauty of Sphinx is that it can output in multiple formats,
-not just HTML.
-So you can generate a manpage for your docs::
 
-	make man
+Step 2
+======
 
-This will place a manpage in ``_build/man``.
-You can then view it with::
+Referencing Code
+****************
 
-	man _build/man/crawler.1
+Let's go ahead and add a cookbook to our documentation.
+Users will often come to your project to solve the same problems.
+Including a Cookbook or Examples section will be a great resource for this content.
+
+In your ``cookbook.rst``,
+add the following::
+
+	========
+	Cookbook
+	========
+
+	Crawl a web page
+	----------------
+
+	The most simple way to use our program is with no arguments.
+	Simply run::
+
+		crawler <url>
+
+	to crawl a webpage.
+
+	Crawl a page slowly
+	-------------------
+
+	To add a delay to your crawler,
+	use :option:`-d`::
+
+		crawler -d 10 <url>
+
+	This will wait 10 seconds between page fetches.
+
+	Crawl only your blog
+	--------------------
+
+	You will want to use the :option:`-i` flag,
+	which while ignore URLs matching the passed regex::
+
+		crawler -i "^blog/" <url>
+
+	This will only crawl pages that contain your blog URL.
+
+
+		Only crawl certain pages
+		------------------------
+
+		You will want to use the :option:`-i` flag,
+		which while ignore URLs matching the passed regex::
+
+			crawler -i "pdf$" <url>
+
+		This will ignore URLs that end in PDF.
+
